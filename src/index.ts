@@ -22,6 +22,7 @@ const run = async () => {
     },
     playground: { version: '1.7.20' },
     introspection: true,
+    cors: false,
   })
   return server
 }
