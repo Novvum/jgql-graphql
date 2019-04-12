@@ -20,9 +20,9 @@ const run = async () => {
         'service:depsauce-graphql:KL6-EH_VFe0p-wQpPj9OaA',
       schemaTag: process.env.DEPSAUCE_ENGINE_SCHEMA_TAG || 'production',
     },
-    playground: { version: '1.7.20' },
+    playground: { version: '1.8.10' },
     introspection: true,
-    cors: false,
+    cors: true,
   })
   return server
 }
