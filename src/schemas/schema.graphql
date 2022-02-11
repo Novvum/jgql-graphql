@@ -1,6 +1,7 @@
 # @desc A schema to represent DepSauce's Graphql API
 # import * from "./npmsio.graphql"
 # import * from "./librariesio.graphql"
+# import * from "./graphql-weekly.graphql"
 
 scalar JSON
 

@@ -2,17 +2,17 @@
 	"name": "jgql-graphql",
 	"scripts": {
 		"start": "dotenv -- nodemon -e ts,graphql -x ts-node src/index.ts",
-		"dev": "npm-run-all --parallel start playground",
+		"dev:old": "npm-run-all --parallel start playground",
 		"debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
 		"playground": "graphql playground",
-		"build": "rimraf dist && tsc",
+		"build:old": "rimraf dist && tsc",
 		"apollo:publish": "apollo schema:publish --endpoint='https://librariesio-graphql.now.sh/' --key='service:graphql-directory-7184:hV9MEAbFVyJMOFdI-bCbGA'",
 		"precommit": "prettier --write *.{ts,tsx} 'src/**/*.{ts,tsx}'",
 		"deploy": "bash ./.scripts/deploy-now.sh"
 	},
 	"dependencies": {
 		"apollo-link-http": "^1.5.14",
-		"apollo-server": "^2.3.1",
+		"apollo-server-micro": "3.6.3",
 		"axios": "^0.18.0",
 		"graphql": "14.0.2",
 		"graphql-binding": "^2.4.1",
@@ -20,6 +20,7 @@
 		"graphql-playground": "^1.3.17",
 		"graphql-tools": "^4.0.4",
 		"graphql-type-json": "^0.2.1",
+		"micro": "9.3.4",
 		"object-assign-deep": "0.4.0",
 		"path": "0.12.7",
 		"qs": "6.6.0"
@@ -30,11 +31,8 @@
 		"dotenv-cli": "1.4.0",
 		"graphql-cli": "3.0.4",
 		"nodemon": "1.18.9",
-		"now": "14.2.0",
 		"npm-run-all": "4.1.5",
 		"prettier": "^1.15.3",
-		"prisma": "^1.23.4",
-		"prisma-binding": "2.2.14",
 		"rimraf": "2.6.3",
 		"ts-node": "7.0.1",
 		"typescript": "3.2.2"
