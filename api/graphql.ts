@@ -48,7 +48,7 @@ async function handler(req, res) {
     path: "/api/graphql",
   })(req, res);
 }
-export default handler // allowCors(handler);
+export default allowCors(handler);
 
 export const config = {
   api: {
